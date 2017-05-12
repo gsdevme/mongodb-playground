@@ -10,9 +10,10 @@ nginx:
     - php
 
 php:
-  image: php:7.1-fpm
+  build: ./.docker/php/
   volumes:
     - ./web:/srv/web/
+    - ./vendor:/srv/vendor/
   links:
     - mongo:mongo
 
